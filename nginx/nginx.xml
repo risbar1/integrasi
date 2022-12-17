@@ -1,0 +1,16 @@
+<service> 
+  <id>nginx</id> 
+  <name>nginx</name>
+  <description>nginx</description>
+  <executable>C:\Users\Meliodas\Documents\DIKTI\DEV\nginx\nginx.exe</executable>
+  <logpath>C:\Users\Meliodas\Documents\DIKTI\DEV\nginx\</logpath> 
+  <logmode>roll</logmode> 
+  <depend></depend>
+  <startargument>-p</startargument>
+  <startargument>C:\Users\Meliodas\Documents\DIKTI\DEV\nginx</startargument>
+  <stopexecutable>C:\Users\Meliodas\Documents\DIKTI\DEV\nginx\nginx.exe</stopexecutable>
+  <stopargument>-p</stopargument> 
+  <stopargument>C:\Users\Meliodas\Documents\DIKTI\DEV\nginx</stopargument>
+  <stopargument>-s</stopargument> 
+  <stopargument>stop</stopargument>
+  </service>
