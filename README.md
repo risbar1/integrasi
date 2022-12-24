@@ -16,18 +16,10 @@ website : http://localhost:8101/#/
 ![gambar](https://user-images.githubusercontent.com/83967960/208285743-3862bdbe-2241-487d-8f07-0397e6428cd0.png)
 
 
-
-
-gambar
-
-gambar
-
-gambar
-
-gambar
-
-gambar
-
-gambar
-
-gambar
+![gambar](https://user-images.githubusercontent.com/83967960/209429735-a0add237-98af-4043-ae69-bd1aacd5cdf1.png)
+![gambar](https://user-images.githubusercontent.com/83967960/209429754-31d0f119-bef5-4688-a93a-fd07c2cb2408.png)
+![gambar](https://user-images.githubusercontent.com/83967960/209429761-a5a51d34-ffec-43be-97ec-6a3d61181dfd.png)
+![gambar](https://user-images.githubusercontent.com/83967960/209429762-d9401c4a-6c58-4974-aa92-6415ccb34e6c.png)
+![gambar](https://user-images.githubusercontent.com/83967960/209429763-d9dd50cf-a8d6-4a63-a123-9a25d781354d.png)
+![gambar](https://user-images.githubusercontent.com/83967960/209429765-c7de6932-3e0b-4959-86c1-6b28b142ec32.png)
+![gambar](https://user-images.githubusercontent.com/83967960/209429766-6f1199f4-c364-4d25-bb17-41f50d0e3a5a.png)
