@@ -1,2 +1,0 @@
-2023/01/03 12:05:39 [emerg] 21276#24872: CreateDirectory() "D:\risky\Folder Baru\aplikasi_gratis\project\instaler_fix\integrasi\aplikasi\nginx/temp/client_body_temp" failed (3: The system cannot find the path specified)
-2023/01/03 12:06:28 [emerg] 24584#23284: CreateDirectory() "D:\risky\Folder Baru\aplikasi_gratis\project\instaler_fix\integrasi\aplikasi\nginx/temp/client_body_temp" failed (3: The system cannot find the path specified)
