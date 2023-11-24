@@ -1,6 +1,6 @@
 # integrasi
 
-# aplikasi_anggaran
+# Aplikasi Anggaran
 
 Nama Lengkap : Risky Akbar 
 Nomor Whatsapp : 0877 8443 0939 
