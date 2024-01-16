@@ -318,10 +318,10 @@ START 1
 CACHE 1;
 
 -- ----------------------------
--- Sequence structure for k_tanngal_daftar_ulang_f_tanggal_daftar_ulang_id_seq
+-- Sequence structure for k_tanggal_daftar_ulang_f_tanggal_daftar_ulang_id_seq
 -- ----------------------------
-DROP SEQUENCE IF EXISTS "integrasi"."k_tanngal_daftar_ulang_f_tanggal_daftar_ulang_id_seq";
-CREATE SEQUENCE "integrasi"."k_tanngal_daftar_ulang_f_tanggal_daftar_ulang_id_seq" 
+DROP SEQUENCE IF EXISTS "integrasi"."k_tanggal_daftar_ulang_f_tanggal_daftar_ulang_id_seq";
+CREATE SEQUENCE "integrasi"."k_tanggal_daftar_ulang_f_tanggal_daftar_ulang_id_seq" 
 INCREMENT 1
 MINVALUE  1
 MAXVALUE 9223372036854775807
@@ -362,6 +362,17 @@ START 1
 CACHE 1;
 
 -- ----------------------------
+-- Sequence structure for t_dokumen_f_id
+-- ----------------------------
+DROP SEQUENCE IF EXISTS "integrasi"."t_dokumen_f_id";
+CREATE SEQUENCE "integrasi"."t_dokumen_f_id" 
+INCREMENT 1
+MINVALUE  1
+MAXVALUE 9223372036854775807
+START 1
+CACHE 1;
+
+-- ----------------------------
 -- Sequence structure for t_gedung_f_gedung_id_seq
 -- ----------------------------
 DROP SEQUENCE IF EXISTS "integrasi"."t_gedung_f_gedung_id_seq";
@@ -377,6 +388,17 @@ CACHE 1;
 -- ----------------------------
 DROP SEQUENCE IF EXISTS "integrasi"."t_institusi_f_institusi_id_seq";
 CREATE SEQUENCE "integrasi"."t_institusi_f_institusi_id_seq" 
+INCREMENT 1
+MINVALUE  1
+MAXVALUE 9223372036854775807
+START 1
+CACHE 1;
+
+-- ----------------------------
+-- Sequence structure for t_jadwal_f_jadwal_id_seq
+-- ----------------------------
+DROP SEQUENCE IF EXISTS "integrasi"."t_jadwal_f_jadwal_id_seq";
+CREATE SEQUENCE "integrasi"."t_jadwal_f_jadwal_id_seq" 
 INCREMENT 1
 MINVALUE  1
 MAXVALUE 9223372036854775807
@@ -421,6 +443,17 @@ CACHE 1;
 -- ----------------------------
 DROP SEQUENCE IF EXISTS "integrasi"."t_keuanganmahasiswabaru_f_keuanganmahasiswabaru_id_seq";
 CREATE SEQUENCE "integrasi"."t_keuanganmahasiswabaru_f_keuanganmahasiswabaru_id_seq" 
+INCREMENT 1
+MINVALUE  1
+MAXVALUE 9223372036854775807
+START 1
+CACHE 1;
+
+-- ----------------------------
+-- Sequence structure for t_kurikulum_data_f_kurikulum_id
+-- ----------------------------
+DROP SEQUENCE IF EXISTS "integrasi"."t_kurikulum_data_f_kurikulum_id";
+CREATE SEQUENCE "integrasi"."t_kurikulum_data_f_kurikulum_id" 
 INCREMENT 1
 MINVALUE  1
 MAXVALUE 9223372036854775807
@@ -648,6 +681,17 @@ START 1
 CACHE 1;
 
 -- ----------------------------
+-- Sequence structure for t_semester_f_semester_id_seq
+-- ----------------------------
+DROP SEQUENCE IF EXISTS "integrasi"."t_semester_f_semester_id_seq";
+CREATE SEQUENCE "integrasi"."t_semester_f_semester_id_seq" 
+INCREMENT 1
+MINVALUE  1
+MAXVALUE 9223372036854775807
+START 1
+CACHE 1;
+
+-- ----------------------------
 -- Sequence structure for t_sertifikat_f_sertifikat_id_seq
 -- ----------------------------
 DROP SEQUENCE IF EXISTS "integrasi"."t_sertifikat_f_sertifikat_id_seq";
@@ -866,7 +910,6 @@ DROP TABLE IF EXISTS "integrasi"."k_jeniskurikulum";
 CREATE TABLE "integrasi"."k_jeniskurikulum" (
   "f_kode" varchar(1) COLLATE "pg_catalog"."default" NOT NULL,
   "f_nama" varchar(10) COLLATE "pg_catalog"."default",
-  "f_jeniskurikulum_id" int4 NOT NULL DEFAULT nextval(('integrasi.k_jeniskurikulum_f_jeniskurikulum_id_seq'::text)::regclass),
   "f_tgl_create" timestamp(6),
   "f_last_update" timestamp(6),
   "f_soft_delete" numeric(1,0),
@@ -875,6 +918,21 @@ CREATE TABLE "integrasi"."k_jeniskurikulum" (
 )
 ;
 COMMENT ON TABLE "integrasi"."k_jeniskurikulum" IS 'KODE JENIS KURIKULUM';
+
+-- ----------------------------
+-- Table structure for k_jenismatakuliah
+-- ----------------------------
+DROP TABLE IF EXISTS "integrasi"."k_jenismatakuliah";
+CREATE TABLE "integrasi"."k_jenismatakuliah" (
+  "f_kode" varchar(1) COLLATE "pg_catalog"."default" NOT NULL,
+  "f_nama" varchar(30) COLLATE "pg_catalog"."default",
+  "f_tgl_create" timestamp(6),
+  "f_last_update" timestamp(6),
+  "f_soft_delete" numeric(1,0),
+  "f_username" varchar(20) COLLATE "pg_catalog"."default",
+  "f_komputer" varchar(50) COLLATE "pg_catalog"."default"
+)
+;
 
 -- ----------------------------
 -- Table structure for k_jenjangstudi
@@ -939,6 +997,21 @@ CREATE TABLE "integrasi"."k_kecamatan" (
   "f_kecamatan_id" int4 NOT NULL DEFAULT nextval(('integrasi.k_kecamatan_f_kecamatan_id_seq'::text)::regclass),
   "f_kodekabupaten" int4,
   "f_kode" varchar(20) COLLATE "pg_catalog"."default"
+)
+;
+
+-- ----------------------------
+-- Table structure for k_kelompokmatakuliah
+-- ----------------------------
+DROP TABLE IF EXISTS "integrasi"."k_kelompokmatakuliah";
+CREATE TABLE "integrasi"."k_kelompokmatakuliah" (
+  "f_kode" varchar(20) COLLATE "pg_catalog"."default" NOT NULL,
+  "f_nama" varchar(255) COLLATE "pg_catalog"."default",
+  "f_tgl_create" timestamp(6),
+  "f_last_update" timestamp(6),
+  "f_soft_delete" numeric(1,0),
+  "f_username" varchar(20) COLLATE "pg_catalog"."default",
+  "f_komputer" varchar(100) COLLATE "pg_catalog"."default"
 )
 ;
 
@@ -1186,7 +1259,8 @@ CREATE TABLE "integrasi"."k_sertifikat" (
   "f_nama" text COLLATE "pg_catalog"."default",
   "f_kota" varchar(255) COLLATE "pg_catalog"."default",
   "f_jenis" varchar(255) COLLATE "pg_catalog"."default",
-  "f_komputer" varchar(50) COLLATE "pg_catalog"."default"
+  "f_komputer" varchar(50) COLLATE "pg_catalog"."default",
+  "f_color" varchar(255) COLLATE "pg_catalog"."default"
 )
 ;
 
@@ -1240,16 +1314,16 @@ CREATE TABLE "integrasi"."k_suratketerangan" (
 ;
 
 -- ----------------------------
--- Table structure for k_tanngal_daftar_ulang
+-- Table structure for k_tanggal_daftar_ulang
 -- ----------------------------
-DROP TABLE IF EXISTS "integrasi"."k_tanngal_daftar_ulang";
-CREATE TABLE "integrasi"."k_tanngal_daftar_ulang" (
+DROP TABLE IF EXISTS "integrasi"."k_tanggal_daftar_ulang";
+CREATE TABLE "integrasi"."k_tanggal_daftar_ulang" (
   "f_angkatan" varchar(5) COLLATE "pg_catalog"."default",
   "f_tgl_create" timestamp(6),
   "f_last_update" timestamp(6),
   "f_soft_delete" numeric(1,0),
   "f_username" varchar(20) COLLATE "pg_catalog"."default",
-  "f_tanggal_daftar_ulang_id" int4 NOT NULL DEFAULT nextval(('integrasi.k_tanngal_daftar_ulang_f_tanggal_daftar_ulang_id_seq'::text)::regclass),
+  "f_tanggal_daftar_ulang_id" int4 NOT NULL DEFAULT nextval(('integrasi.k_tanggal_daftar_ulang_f_tanggal_daftar_ulang_id_seq'::text)::regclass),
   "f_tanggal_daftar_ulang_utama_mulai" date,
   "f_tanggal_pembayaran_mulai" date,
   "f_tanggal_daftar_ulang_cadangan_mulai" date,
@@ -1308,19 +1382,6 @@ CREATE TABLE "integrasi"."k_ukuran_jaket" (
 ;
 
 -- ----------------------------
--- Table structure for t_akademik_log
--- ----------------------------
-DROP TABLE IF EXISTS "integrasi"."t_akademik_log";
-CREATE TABLE "integrasi"."t_akademik_log" (
-  "f_data" text COLLATE "pg_catalog"."default",
-  "f_tgl_create" timestamp(6),
-  "f_username" varchar(20) COLLATE "pg_catalog"."default",
-  "f_action" varchar(100) COLLATE "pg_catalog"."default",
-  "f_table" varchar(255) COLLATE "pg_catalog"."default"
-)
-;
-
--- ----------------------------
 -- Table structure for t_dayatampung
 -- ----------------------------
 DROP TABLE IF EXISTS "integrasi"."t_dayatampung";
@@ -1336,6 +1397,61 @@ CREATE TABLE "integrasi"."t_dayatampung" (
   "f_tahun" varchar(5) COLLATE "pg_catalog"."default",
   "f_jumlah" varchar(20) COLLATE "pg_catalog"."default",
   "f_progdi" varchar(20) COLLATE "pg_catalog"."default"
+)
+;
+
+-- ----------------------------
+-- Table structure for t_dokumen
+-- ----------------------------
+DROP TABLE IF EXISTS "integrasi"."t_dokumen";
+CREATE TABLE "integrasi"."t_dokumen" (
+  "f_nim" varchar(20) COLLATE "pg_catalog"."default" NOT NULL,
+  "f_nama" varchar(100) COLLATE "pg_catalog"."default",
+  "f_angkatan" varchar(4) COLLATE "pg_catalog"."default",
+  "f_jurusan" text COLLATE "pg_catalog"."default",
+  "f_progdi" text COLLATE "pg_catalog"."default",
+  "f_file_marksheet" text COLLATE "pg_catalog"."default",
+  "f_file_ijazah" text COLLATE "pg_catalog"."default",
+  "f_file_ktp" text COLLATE "pg_catalog"."default",
+  "f_file_transkrip" text COLLATE "pg_catalog"."default",
+  "f_file_kk" text COLLATE "pg_catalog"."default",
+  "f_file_ijazah_sma" text COLLATE "pg_catalog"."default",
+  "f_username" varchar(300) COLLATE "pg_catalog"."default",
+  "f_file_akte_kelahiran" text COLLATE "pg_catalog"."default",
+  "f_file_ktm" text COLLATE "pg_catalog"."default",
+  "updated_at" timestamp(6),
+  "created_at" timestamp(6),
+  "f_file_photo_masuk" text COLLATE "pg_catalog"."default",
+  "f_file_photo_keluar" text COLLATE "pg_catalog"."default",
+  "f_file_marksheet_1" text COLLATE "pg_catalog"."default",
+  "f_file_marksheet_2" text COLLATE "pg_catalog"."default",
+  "f_file_marksheet_3" text COLLATE "pg_catalog"."default",
+  "f_file_marksheet_4" text COLLATE "pg_catalog"."default",
+  "f_file_marksheet_5" text COLLATE "pg_catalog"."default",
+  "f_file_marksheet_6" text COLLATE "pg_catalog"."default",
+  "f_file_marksheet_7" text COLLATE "pg_catalog"."default",
+  "f_file_marksheet_8" text COLLATE "pg_catalog"."default",
+  "f_file_marksheet_3_do" text COLLATE "pg_catalog"."default",
+  "f_file_marksheet_4_do" text COLLATE "pg_catalog"."default",
+  "f_file_marksheet_5_do" text COLLATE "pg_catalog"."default",
+  "f_file_marksheet_6_do" text COLLATE "pg_catalog"."default",
+  "f_file_marksheet_7_do" text COLLATE "pg_catalog"."default",
+  "f_id" int4 NOT NULL DEFAULT nextval(('public.t_dokumen_f_id'::text)::regclass),
+  "f_no_box" varchar(30) COLLATE "pg_catalog"."default",
+  "f_no_kode" varchar(30) COLLATE "pg_catalog"."default"
+)
+;
+
+-- ----------------------------
+-- Table structure for t_feeder_pt_log
+-- ----------------------------
+DROP TABLE IF EXISTS "integrasi"."t_feeder_pt_log";
+CREATE TABLE "integrasi"."t_feeder_pt_log" (
+  "f_data" text COLLATE "pg_catalog"."default",
+  "f_tgl_create" timestamp(6),
+  "f_username" varchar(20) COLLATE "pg_catalog"."default",
+  "f_action" varchar(100) COLLATE "pg_catalog"."default",
+  "f_table" varchar(255) COLLATE "pg_catalog"."default"
 )
 ;
 
@@ -1367,6 +1483,129 @@ CREATE TABLE "integrasi"."t_institusi" (
   "f_namainstitusi" varchar(255) COLLATE "pg_catalog"."default",
   "f_alamat" varchar(255) COLLATE "pg_catalog"."default",
   "f_namakota" varchar(255) COLLATE "pg_catalog"."default"
+)
+;
+
+-- ----------------------------
+-- Table structure for t_jadwal
+-- ----------------------------
+DROP TABLE IF EXISTS "integrasi"."t_jadwal";
+CREATE TABLE "integrasi"."t_jadwal" (
+  "f_jadwal_id" int4 NOT NULL DEFAULT nextval(('integrasi.t_jadwal_f_jadwal_id_seq'::text)::regclass),
+  "f_matakuliah_id" int4,
+  "f_progdi_id" int4,
+  "f_thakad" varchar(9) COLLATE "pg_catalog"."default",
+  "f_semester" int2,
+  "f_perkuliahan" int2,
+  "f_kelas" varchar(6) COLLATE "pg_catalog"."default",
+  "f_kapasitas" int2,
+  "f_peserta" int2,
+  "f_tatapmukarencana" int2,
+  "f_tatapmukarealisasi" int2,
+  "f_bobotuts" int2,
+  "f_bobotuas" int2,
+  "f_bobottugas" int2,
+  "f_tglpertemuan_1" date,
+  "f_tglpertemuan_2" date,
+  "f_tglpertemuan_3" date,
+  "f_tglpertemuan_4" date,
+  "f_tglpertemuan_5" date,
+  "f_tglpertemuan_6" date,
+  "f_tglpertemuan_7" date,
+  "f_tglpertemuan_8" date,
+  "f_tglpertemuan_9" date,
+  "f_tglpertemuan_10" date,
+  "f_tglpertemuan_11" date,
+  "f_tglpertemuan_12" date,
+  "f_tglpertemuan_13" date,
+  "f_tglpertemuan_14" date,
+  "f_tglpertemuan_15" date,
+  "f_tglpertemuan_16" date,
+  "f_tglpertemuan_17" date,
+  "f_tglpertemuan_18" date,
+  "f_tglpertemuan_19" date,
+  "f_tglpertemuan_20" date,
+  "f_silabus_1" varchar(500) COLLATE "pg_catalog"."default",
+  "f_silabus_2" varchar(500) COLLATE "pg_catalog"."default",
+  "f_silabus_3" varchar(500) COLLATE "pg_catalog"."default",
+  "f_silabus_4" varchar(500) COLLATE "pg_catalog"."default",
+  "f_silabus_5" varchar(500) COLLATE "pg_catalog"."default",
+  "f_silabus_6" varchar(500) COLLATE "pg_catalog"."default",
+  "f_silabus_7" varchar(500) COLLATE "pg_catalog"."default",
+  "f_silabus_8" varchar(500) COLLATE "pg_catalog"."default",
+  "f_silabus_9" varchar(500) COLLATE "pg_catalog"."default",
+  "f_silabus_10" varchar(500) COLLATE "pg_catalog"."default",
+  "f_silabus_11" varchar(500) COLLATE "pg_catalog"."default",
+  "f_silabus_12" varchar(500) COLLATE "pg_catalog"."default",
+  "f_silabus_13" varchar(500) COLLATE "pg_catalog"."default",
+  "f_silabus_14" varchar(500) COLLATE "pg_catalog"."default",
+  "f_silabus_15" varchar(500) COLLATE "pg_catalog"."default",
+  "f_silabus_16" varchar(500) COLLATE "pg_catalog"."default",
+  "f_silabus_17" varchar(500) COLLATE "pg_catalog"."default",
+  "f_silabus_18" varchar(500) COLLATE "pg_catalog"."default",
+  "f_silabus_19" varchar(500) COLLATE "pg_catalog"."default",
+  "f_silabus_20" varchar(500) COLLATE "pg_catalog"."default",
+  "f_paket" varchar(2) COLLATE "pg_catalog"."default",
+  "f_tglpertemuan_21" date,
+  "f_tglpertemuan_22" date,
+  "f_tglpertemuan_23" date,
+  "f_tglpertemuan_24" date,
+  "f_tglpertemuan_25" date,
+  "f_tglpertemuan_26" date,
+  "f_tglpertemuan_27" date,
+  "f_tglpertemuan_28" date,
+  "f_tglpertemuan_29" date,
+  "f_tglpertemuan_30" date,
+  "f_tglpertemuan_31" date,
+  "f_tglpertemuan_32" date,
+  "f_tglpertemuan_33" date,
+  "f_tglpertemuan_34" date,
+  "f_tglpertemuan_35" date,
+  "f_tglpertemuan_36" date,
+  "f_tglpertemuan_37" date,
+  "f_tglpertemuan_38" date,
+  "f_tglpertemuan_39" date,
+  "f_tglpertemuan_40" date,
+  "f_silabus_21" varchar(500) COLLATE "pg_catalog"."default",
+  "f_silabus_22" varchar(500) COLLATE "pg_catalog"."default",
+  "f_silabus_23" varchar(500) COLLATE "pg_catalog"."default",
+  "f_silabus_24" varchar(500) COLLATE "pg_catalog"."default",
+  "f_silabus_25" varchar(500) COLLATE "pg_catalog"."default",
+  "f_silabus_26" varchar(500) COLLATE "pg_catalog"."default",
+  "f_silabus_27" varchar(500) COLLATE "pg_catalog"."default",
+  "f_silabus_28" varchar(500) COLLATE "pg_catalog"."default",
+  "f_silabus_29" varchar(500) COLLATE "pg_catalog"."default",
+  "f_silabus_30" varchar(500) COLLATE "pg_catalog"."default",
+  "f_silabus_31" varchar(500) COLLATE "pg_catalog"."default",
+  "f_silabus_32" varchar(500) COLLATE "pg_catalog"."default",
+  "f_silabus_33" varchar(500) COLLATE "pg_catalog"."default",
+  "f_silabus_34" varchar(500) COLLATE "pg_catalog"."default",
+  "f_silabus_35" varchar(500) COLLATE "pg_catalog"."default",
+  "f_silabus_36" varchar(500) COLLATE "pg_catalog"."default",
+  "f_silabus_37" varchar(500) COLLATE "pg_catalog"."default",
+  "f_silabus_38" varchar(500) COLLATE "pg_catalog"."default",
+  "f_silabus_39" varchar(500) COLLATE "pg_catalog"."default",
+  "f_silabus_40" varchar(500) COLLATE "pg_catalog"."default",
+  "f_sks" int2,
+  "f_skstatapmuka" int2,
+  "f_skspraktikum" int2,
+  "f_skspraktek" int2,
+  "f_skssimulasi" int2,
+  "f_bahasan" text COLLATE "pg_catalog"."default",
+  "f_linkup" varchar(2) COLLATE "pg_catalog"."default",
+  "f_mode_kuliah" varchar(2) COLLATE "pg_catalog"."default",
+  "f_tanggal_tutup_pendaftaran" date,
+  "f_tanggal_mulai_efektif" date,
+  "f_tanggal_akhir_efektif" date,
+  "f_namamk" varchar(100) COLLATE "pg_catalog"."default",
+  "f_namamk_eng" varchar(100) COLLATE "pg_catalog"."default",
+  "f_semester_jadwal" int2,
+  "f_kodemk" varchar(10) COLLATE "pg_catalog"."default",
+  "f_kelompokmk" varchar(1) COLLATE "pg_catalog"."default",
+  "f_tgl_create" timestamp(6),
+  "f_last_update" timestamp(6),
+  "f_soft_delete" numeric(1,0),
+  "f_username" varchar(20) COLLATE "pg_catalog"."default"
 )
 ;
 
@@ -1464,6 +1703,31 @@ CREATE TABLE "integrasi"."t_keuanganmahasiswabaru" (
 COMMENT ON COLUMN "integrasi"."t_keuanganmahasiswabaru"."f_statuslunas" IS 'T = BELUM LUNAS
 Y = LUNAS';
 COMMENT ON COLUMN "integrasi"."t_keuanganmahasiswabaru"."f_tanggalbayar" IS 'DDMMYYYY';
+
+-- ----------------------------
+-- Table structure for t_kurikulum_data
+-- ----------------------------
+DROP TABLE IF EXISTS "integrasi"."t_kurikulum_data";
+CREATE TABLE "integrasi"."t_kurikulum_data" (
+  "f_kurikulum_id" int4 NOT NULL DEFAULT nextval(('integrasi.t_kurikulum_data_f_kurikulum_id'::text)::regclass),
+  "f_nama" varchar(100) COLLATE "pg_catalog"."default",
+  "f_file" bytea,
+  "f_sks_wajib" int2,
+  "f_sks_pilihan" int2,
+  "f_sks_jumlah" int2,
+  "f_jurusan_id" int4,
+  "f_progdi_id" int4,
+  "f_keterangan" text COLLATE "pg_catalog"."default",
+  "f_thakad" varchar(9) COLLATE "pg_catalog"."default",
+  "f_semester" int2,
+  "f_username" varchar(30) COLLATE "pg_catalog"."default",
+  "f_komputer" varchar(30) COLLATE "pg_catalog"."default",
+  "f_soft_delete" numeric(1,0),
+  "f_tgl_create" timestamp(6),
+  "f_last_update" timestamp(6) DEFAULT now(),
+  "f_kurikulum_id_eksternal" text COLLATE "pg_catalog"."default"
+)
+;
 
 -- ----------------------------
 -- Table structure for t_log
@@ -1769,14 +2033,12 @@ CREATE TABLE "integrasi"."t_matakuliah" (
   "f_jps" int2 DEFAULT 0,
   "f_tanggal_mulai_efektif" date,
   "f_tanggal_akhir_efektif" date,
-  "f_kelompokmatakuliah" varchar(1) COLLATE "pg_catalog"."default",
   "f_metode_pembelajaran" varchar(150) COLLATE "pg_catalog"."default",
   "f_last_update" timestamp(6) DEFAULT now(),
   "f_tgl_create" timestamp(6) DEFAULT now(),
   "f_komputer" varchar(50) COLLATE "pg_catalog"."default",
   "f_username" varchar(20) COLLATE "pg_catalog"."default",
-  "f_eksternal_ws_id_mk" varchar(100) COLLATE "pg_catalog"."default",
-  "f_status" varchar(3) COLLATE "pg_catalog"."default",
+  "f_matakuliah_id_eksternal" varchar(100) COLLATE "pg_catalog"."default",
   "f_soft_delete" int2 DEFAULT 0
 )
 ;
@@ -2027,12 +2289,14 @@ CREATE TABLE "integrasi"."t_progdi" (
   "f_progdi_id" int4 NOT NULL DEFAULT nextval(('integrasi.t_progdi_f_progdi_id_seq'::text)::regclass),
   "f_jenjangstudi" varchar(255) COLLATE "pg_catalog"."default",
   "fn_jenjangstudi" varchar(255) COLLATE "pg_catalog"."default",
-  "f_jurusan" int8,
+  "f_jurusan_id" int8,
   "fn_jurusan" varchar(255) COLLATE "pg_catalog"."default",
   "f_id_eksternal_satu" varchar(32) COLLATE "pg_catalog"."default",
   "f_id_eksternal_dua" varchar(32) COLLATE "pg_catalog"."default",
   "f_id_eksternal_tiga" varchar(32) COLLATE "pg_catalog"."default",
-  "f_id_eksternal_empat" varchar(32) COLLATE "pg_catalog"."default"
+  "f_id_eksternal_empat" varchar(32) COLLATE "pg_catalog"."default",
+  "f_kodedikti" varchar(255) COLLATE "pg_catalog"."default",
+  "f_sms" text COLLATE "pg_catalog"."default"
 )
 ;
 
@@ -2124,6 +2388,24 @@ CREATE TABLE "integrasi"."t_sekolah" (
   "f_website" varchar(255) COLLATE "pg_catalog"."default",
   "f_hp" varchar(255) COLLATE "pg_catalog"."default",
   "f_status" varchar(255) COLLATE "pg_catalog"."default"
+)
+;
+
+-- ----------------------------
+-- Table structure for t_semester
+-- ----------------------------
+DROP TABLE IF EXISTS "integrasi"."t_semester";
+CREATE TABLE "integrasi"."t_semester" (
+  "f_semester_id" int4 NOT NULL DEFAULT nextval(('integrasi.t_semester_f_semester_id_seq'::text)::regclass),
+  "f_tahun" varchar(6) COLLATE "pg_catalog"."default",
+  "f_nama" varchar(255) COLLATE "pg_catalog"."default",
+  "f_semester" varchar(1) COLLATE "pg_catalog"."default",
+  "f_status_aktif" varchar(2) COLLATE "pg_catalog"."default",
+  "f_tgl_create" timestamp(6),
+  "f_last_update" timestamp(6),
+  "f_soft_delete" numeric(1,0),
+  "f_username" varchar(20) COLLATE "pg_catalog"."default",
+  "f_tahun_akademik" varchar(9) COLLATE "pg_catalog"."default"
 )
 ;
 
@@ -2228,7 +2510,7 @@ DROP TABLE IF EXISTS "integrasi"."t_substansi";
 CREATE TABLE "integrasi"."t_substansi" (
   "f_substansi_id" int4 NOT NULL DEFAULT nextval(('integrasi.t_substansi_f_substansi_id'::text)::regclass),
   "f_nama" varchar(100) COLLATE "pg_catalog"."default",
-  "f_sks" numeric(16,0),
+  "f_sks" numeric(5,2),
   "f_skstatapmuka" numeric(5,2),
   "f_skspraktikum" numeric(5,2),
   "f_skspraktek" numeric(5,2),
@@ -2238,7 +2520,10 @@ CREATE TABLE "integrasi"."t_substansi" (
   "f_last_update" timestamp(6),
   "f_soft_delete" numeric(1,0),
   "f_username" varchar(20) COLLATE "pg_catalog"."default",
-  "f_id_eksternal" varchar(255) COLLATE "pg_catalog"."default"
+  "f_id_eksternal" varchar(255) COLLATE "pg_catalog"."default",
+  "f_komputer" varchar(100) COLLATE "pg_catalog"."default",
+  "f_jurusan_id" int4,
+  "f_substansi_id_eksternal" text COLLATE "pg_catalog"."default"
 )
 ;
 
@@ -2272,6 +2557,19 @@ CREATE TABLE "integrasi"."t_suratketerangan" (
   "f_ortu_instansi" varchar(100) COLLATE "pg_catalog"."default",
   "f_ortu_nip" varchar(100) COLLATE "pg_catalog"."default",
   "f_alasan_pengambilan_surat" varchar(300) COLLATE "pg_catalog"."default"
+)
+;
+
+-- ----------------------------
+-- Table structure for t_ws
+-- ----------------------------
+DROP TABLE IF EXISTS "integrasi"."t_ws";
+CREATE TABLE "integrasi"."t_ws" (
+  "f_token" text COLLATE "pg_catalog"."default",
+  "f_matakuliah" text COLLATE "pg_catalog"."default",
+  "f_substansi" text COLLATE "pg_catalog"."default",
+  "f_kurikulum" text COLLATE "pg_catalog"."default",
+  "f_jadwal" text COLLATE "pg_catalog"."default"
 )
 ;
 
@@ -2394,6 +2692,44 @@ $BODY$
   COST 100;
 
 -- ----------------------------
+-- Function structure for fn_jeniskurikulum
+-- ----------------------------
+DROP FUNCTION IF EXISTS "integrasi"."fn_jeniskurikulum"(text);
+CREATE OR REPLACE FUNCTION "integrasi"."fn_jeniskurikulum"(text)
+  RETURNS "pg_catalog"."text" AS $BODY$
+DECLARE
+        result  text;
+BEGIN
+    
+        select into result f_nama from integrasi.k_jeniskurikulum where f_kode = $1;
+
+        RETURN result;
+
+    END;
+$BODY$
+  LANGUAGE plpgsql VOLATILE
+  COST 100;
+
+-- ----------------------------
+-- Function structure for fn_jenismatakuliah
+-- ----------------------------
+DROP FUNCTION IF EXISTS "integrasi"."fn_jenismatakuliah"(text);
+CREATE OR REPLACE FUNCTION "integrasi"."fn_jenismatakuliah"(text)
+  RETURNS "pg_catalog"."text" AS $BODY$
+DECLARE
+        result  text;
+BEGIN
+    
+        select into result f_nama from integrasi.k_jenismatakuliah where f_kode = $1;
+
+        RETURN result;
+
+    END;
+$BODY$
+  LANGUAGE plpgsql VOLATILE
+  COST 100;
+
+-- ----------------------------
 -- Function structure for fn_jenisukt
 -- ----------------------------
 DROP FUNCTION IF EXISTS "integrasi"."fn_jenisukt"(int4, int4);
@@ -2422,6 +2758,30 @@ BEGIN
     END;
 
 
+$BODY$
+  LANGUAGE plpgsql VOLATILE
+  COST 100;
+
+-- ----------------------------
+-- Function structure for fn_kelompokmk
+-- ----------------------------
+DROP FUNCTION IF EXISTS "integrasi"."fn_kelompokmk"(text);
+CREATE OR REPLACE FUNCTION "integrasi"."fn_kelompokmk"(text)
+  RETURNS "pg_catalog"."text" AS $BODY$
+DECLARE
+        result  text;
+BEGIN
+        
+      select into result  f_nama from integrasi.k_kelompokmatakuliah where f_kode = $1;
+
+      if result is null then
+           result := '';
+      end if;
+
+      RETURN result;
+
+
+    END;
 $BODY$
   LANGUAGE plpgsql VOLATILE
   COST 100;
@@ -2460,6 +2820,55 @@ $BODY$
   COST 100;
 
 -- ----------------------------
+-- Function structure for fn_namajurusan
+-- ----------------------------
+DROP FUNCTION IF EXISTS "integrasi"."fn_namajurusan"(int4);
+CREATE OR REPLACE FUNCTION "integrasi"."fn_namajurusan"(int4)
+  RETURNS "pg_catalog"."text" AS $BODY$
+
+
+DECLARE
+
+        result  text;
+
+
+BEGIN
+
+
+        select into result f_namajurusan from integrasi.t_jurusan where f_jurusan_id = $1;
+
+
+        RETURN result;
+
+
+    END;
+
+
+
+$BODY$
+  LANGUAGE plpgsql VOLATILE
+  COST 100;
+
+-- ----------------------------
+-- Function structure for fn_namaprogdi
+-- ----------------------------
+DROP FUNCTION IF EXISTS "integrasi"."fn_namaprogdi"(int4);
+CREATE OR REPLACE FUNCTION "integrasi"."fn_namaprogdi"(int4)
+  RETURNS "pg_catalog"."text" AS $BODY$
+DECLARE
+        result  text;
+BEGIN
+    
+        select into result f_namaprogdi from integrasi.t_progdi where f_progdi_id = $1;
+
+        RETURN result;
+
+    END;
+$BODY$
+  LANGUAGE plpgsql VOLATILE
+  COST 100;
+
+-- ----------------------------
 -- Function structure for fn_randompassword
 -- ----------------------------
 DROP FUNCTION IF EXISTS "integrasi"."fn_randompassword"();
@@ -2484,6 +2893,28 @@ BEGIN
 
         RETURN result;
 END;
+$BODY$
+  LANGUAGE plpgsql VOLATILE
+  COST 100;
+
+-- ----------------------------
+-- Function structure for fn_semester
+-- ----------------------------
+DROP FUNCTION IF EXISTS "integrasi"."fn_semester"(int4);
+CREATE OR REPLACE FUNCTION "integrasi"."fn_semester"(int4)
+  RETURNS "pg_catalog"."text" AS $BODY$
+DECLARE
+        result  text;
+BEGIN
+
+      IF $1 = 1 THEN 
+             result :=  'Ganjil';
+      ELSIF  $1 = 2 THEN 
+             result := 'Genap';
+     END IF; 
+
+        RETURN result;
+    END;
 $BODY$
   LANGUAGE plpgsql VOLATILE
   COST 100;
@@ -2541,6 +2972,25 @@ BEGIN
 
 
 
+
+    END;
+$BODY$
+  LANGUAGE plpgsql VOLATILE
+  COST 100;
+
+-- ----------------------------
+-- Function structure for fn_sms
+-- ----------------------------
+DROP FUNCTION IF EXISTS "integrasi"."fn_sms"(int4);
+CREATE OR REPLACE FUNCTION "integrasi"."fn_sms"(int4)
+  RETURNS "pg_catalog"."text" AS $BODY$
+DECLARE
+        result  text;
+BEGIN
+    
+        select into result f_sms from integrasi.t_progdi where f_progdi_id = $1;
+
+        RETURN result;
 
     END;
 $BODY$
@@ -2818,7 +3268,7 @@ SELECT setval('"integrasi"."k_propinsi_f_propinsi_id_seq"', 109, true);
 -- ----------------------------
 -- Alter sequences owned by
 -- ----------------------------
-SELECT setval('"integrasi"."k_sertifikat_f_sertifikat_id_seq"', 5, true);
+SELECT setval('"integrasi"."k_sertifikat_f_sertifikat_id_seq"', 6, true);
 
 -- ----------------------------
 -- Alter sequences owned by
@@ -2833,7 +3283,7 @@ SELECT setval('"integrasi"."k_status_f_status_id_seq"', 4, true);
 -- ----------------------------
 -- Alter sequences owned by
 -- ----------------------------
-SELECT setval('"integrasi"."k_tanngal_daftar_ulang_f_tanggal_daftar_ulang_id_seq"', 21, true);
+SELECT setval('"integrasi"."k_tanggal_daftar_ulang_f_tanggal_daftar_ulang_id_seq"', 21, true);
 
 -- ----------------------------
 -- Alter sequences owned by
@@ -2853,12 +3303,22 @@ SELECT setval('"integrasi"."t_dayatampung_f_dayatampung_id_seq"', 84, true);
 -- ----------------------------
 -- Alter sequences owned by
 -- ----------------------------
+SELECT setval('"integrasi"."t_dokumen_f_id"', 2, false);
+
+-- ----------------------------
+-- Alter sequences owned by
+-- ----------------------------
 SELECT setval('"integrasi"."t_gedung_f_gedung_id_seq"', 10, true);
 
 -- ----------------------------
 -- Alter sequences owned by
 -- ----------------------------
 SELECT setval('"integrasi"."t_institusi_f_institusi_id_seq"', 2, false);
+
+-- ----------------------------
+-- Alter sequences owned by
+-- ----------------------------
+SELECT setval('"integrasi"."t_jadwal_f_jadwal_id_seq"', 2, false);
 
 -- ----------------------------
 -- Alter sequences owned by
@@ -2873,12 +3333,17 @@ SELECT setval('"integrasi"."t_jeniskeuangan_f_jeniskeuangan_id_seq"', 353, true)
 -- ----------------------------
 -- Alter sequences owned by
 -- ----------------------------
-SELECT setval('"integrasi"."t_jurusan_f_jurusan_id_seq"', 9, true);
+SELECT setval('"integrasi"."t_jurusan_f_jurusan_id_seq"', 10, true);
 
 -- ----------------------------
 -- Alter sequences owned by
 -- ----------------------------
 SELECT setval('"integrasi"."t_keuanganmahasiswabaru_f_keuanganmahasiswabaru_id_seq"', 18014, true);
+
+-- ----------------------------
+-- Alter sequences owned by
+-- ----------------------------
+SELECT setval('"integrasi"."t_kurikulum_data_f_kurikulum_id"', 4, true);
 
 -- ----------------------------
 -- Alter sequences owned by
@@ -2898,7 +3363,7 @@ SELECT setval('"integrasi"."t_manajemenuser_log_id"', 543, true);
 -- ----------------------------
 -- Alter sequences owned by
 -- ----------------------------
-SELECT setval('"integrasi"."t_matakuliah_f_matakuliah_id"', 2, false);
+SELECT setval('"integrasi"."t_matakuliah_f_matakuliah_id"', 29, true);
 
 -- ----------------------------
 -- Alter sequences owned by
@@ -2983,17 +3448,22 @@ SELECT setval('"integrasi"."t_sekolah_f_sekolah_id_seq"', 16852, true);
 -- ----------------------------
 -- Alter sequences owned by
 -- ----------------------------
-SELECT setval('"integrasi"."t_sertifikat_f_sertifikat_id_seq"', 2992, true);
+SELECT setval('"integrasi"."t_semester_f_semester_id_seq"', 155, true);
 
 -- ----------------------------
 -- Alter sequences owned by
 -- ----------------------------
-SELECT setval('"integrasi"."t_setting_format_nim_id_seq"', 94, true);
+SELECT setval('"integrasi"."t_sertifikat_f_sertifikat_id_seq"', 5766, true);
 
 -- ----------------------------
 -- Alter sequences owned by
 -- ----------------------------
-SELECT setval('"integrasi"."t_substansi_f_substansi_id"', 2, true);
+SELECT setval('"integrasi"."t_setting_format_nim_id_seq"', 156, true);
+
+-- ----------------------------
+-- Alter sequences owned by
+-- ----------------------------
+SELECT setval('"integrasi"."t_substansi_f_substansi_id"', 7, true);
 
 -- ----------------------------
 -- Uniques structure for table k_agama
@@ -3068,7 +3538,12 @@ ALTER TABLE "integrasi"."k_jeniskelamin" ADD CONSTRAINT "k_agama_copy1_pkey1" PR
 -- ----------------------------
 -- Primary Key structure for table k_jeniskurikulum
 -- ----------------------------
-ALTER TABLE "integrasi"."k_jeniskurikulum" ADD CONSTRAINT "k_jeniskurikulum_pkey" PRIMARY KEY ("f_kode", "f_jeniskurikulum_id");
+ALTER TABLE "integrasi"."k_jeniskurikulum" ADD CONSTRAINT "k_jeniskurikulum_pkey" PRIMARY KEY ("f_kode");
+
+-- ----------------------------
+-- Primary Key structure for table k_jenismatakuliah
+-- ----------------------------
+ALTER TABLE "integrasi"."k_jenismatakuliah" ADD CONSTRAINT "k_jenismatakuliah_pkey" PRIMARY KEY ("f_kode");
 
 -- ----------------------------
 -- Uniques structure for table k_jenjangstudi
@@ -3094,6 +3569,11 @@ ALTER TABLE "integrasi"."k_kabupaten" ADD CONSTRAINT "k_agama_copy1_pkey6" PRIMA
 -- Primary Key structure for table k_kecamatan
 -- ----------------------------
 ALTER TABLE "integrasi"."k_kecamatan" ADD CONSTRAINT "k_agama_copy1_pkey27" PRIMARY KEY ("f_kecamatan_id");
+
+-- ----------------------------
+-- Primary Key structure for table k_kelompokmatakuliah
+-- ----------------------------
+ALTER TABLE "integrasi"."k_kelompokmatakuliah" ADD CONSTRAINT "k_kelompokmatakuliah_pkey" PRIMARY KEY ("f_kode");
 
 -- ----------------------------
 -- Uniques structure for table k_kelompokstudi
@@ -3211,9 +3691,9 @@ ALTER TABLE "integrasi"."k_status" ADD CONSTRAINT "k_agama_copy1_f_kode_key1" UN
 ALTER TABLE "integrasi"."k_status" ADD CONSTRAINT "k_agama_copy1_pkey22" PRIMARY KEY ("f_kode", "f_status_id");
 
 -- ----------------------------
--- Primary Key structure for table k_tanngal_daftar_ulang
+-- Primary Key structure for table k_tanggal_daftar_ulang
 -- ----------------------------
-ALTER TABLE "integrasi"."k_tanngal_daftar_ulang" ADD CONSTRAINT "k_agama_copy1_pkey33" PRIMARY KEY ("f_tanggal_daftar_ulang_id");
+ALTER TABLE "integrasi"."k_tanggal_daftar_ulang" ADD CONSTRAINT "k_agama_copy1_pkey33" PRIMARY KEY ("f_tanggal_daftar_ulang_id");
 
 -- ----------------------------
 -- Uniques structure for table k_tempatujian
@@ -3251,6 +3731,11 @@ ALTER TABLE "integrasi"."t_dayatampung" ADD CONSTRAINT "t_progdi_copy1_f_progdi_
 ALTER TABLE "integrasi"."t_dayatampung" ADD CONSTRAINT "t_progdi_copy1_pkey1" PRIMARY KEY ("f_dayatampung_id");
 
 -- ----------------------------
+-- Primary Key structure for table t_dokumen
+-- ----------------------------
+ALTER TABLE "integrasi"."t_dokumen" ADD CONSTRAINT "t_dokumen_pkey" PRIMARY KEY ("f_nim");
+
+-- ----------------------------
 -- Uniques structure for table t_gedung
 -- ----------------------------
 ALTER TABLE "integrasi"."t_gedung" ADD CONSTRAINT "t_gedung_f_kodegedung_key" UNIQUE ("f_kodegedung");
@@ -3264,6 +3749,11 @@ ALTER TABLE "integrasi"."t_gedung" ADD CONSTRAINT "k_agama_copy1_pkey8" PRIMARY 
 -- Primary Key structure for table t_institusi
 -- ----------------------------
 ALTER TABLE "integrasi"."t_institusi" ADD CONSTRAINT "k_agama_copy1_pkey31" PRIMARY KEY ("f_institusi_id");
+
+-- ----------------------------
+-- Primary Key structure for table t_jadwal
+-- ----------------------------
+ALTER TABLE "integrasi"."t_jadwal" ADD CONSTRAINT "t_jadwal_pkey" PRIMARY KEY ("f_jadwal_id");
 
 -- ----------------------------
 -- Primary Key structure for table t_jadwalujianseleksi
@@ -3407,6 +3897,11 @@ ALTER TABLE "integrasi"."t_sekolah" ADD CONSTRAINT "k_npsn" UNIQUE ("f_npsn");
 ALTER TABLE "integrasi"."t_sekolah" ADD CONSTRAINT "k_agama_copy1_pkey28" PRIMARY KEY ("f_npsn", "f_sekolah_id");
 
 -- ----------------------------
+-- Primary Key structure for table t_semester
+-- ----------------------------
+ALTER TABLE "integrasi"."t_semester" ADD CONSTRAINT "t_semester_pkey" PRIMARY KEY ("f_semester_id");
+
+-- ----------------------------
 -- Primary Key structure for table t_sertifikat
 -- ----------------------------
 ALTER TABLE "integrasi"."t_sertifikat" ADD CONSTRAINT "t_sertifikat_pkey" PRIMARY KEY ("f_sertifikat_id");
@@ -3503,7 +3998,7 @@ ALTER TABLE "integrasi"."t_mahasiswabaru" ADD CONSTRAINT "t_mahasiswabaru_f_nama
 -- Foreign Keys structure for table t_progdi
 -- ----------------------------
 ALTER TABLE "integrasi"."t_progdi" ADD CONSTRAINT "t_progdi_f_jenjangstudi_fkey" FOREIGN KEY ("f_jenjangstudi") REFERENCES "integrasi"."k_jenjangstudi" ("f_kode") ON DELETE NO ACTION ON UPDATE NO ACTION;
-ALTER TABLE "integrasi"."t_progdi" ADD CONSTRAINT "t_progdi_f_jurusan_id_fkey" FOREIGN KEY ("f_jurusan") REFERENCES "integrasi"."t_jurusan" ("f_jurusan_id") ON DELETE NO ACTION ON UPDATE NO ACTION;
+ALTER TABLE "integrasi"."t_progdi" ADD CONSTRAINT "t_progdi_f_jurusan_id_fkey" FOREIGN KEY ("f_jurusan_id") REFERENCES "integrasi"."t_jurusan" ("f_jurusan_id") ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 -- ----------------------------
 -- Foreign Keys structure for table t_ruangalokasiujian
