@@ -2,8 +2,7 @@
 
 # Aplikasi Anggaran
 
-Nama Lengkap : Risky Akbar 
-Nomor Whatsapp : 0877 8443 0939 
+Email : yaniragil65@gmail.com
 Nomor Rekening : 129 001 0925440 ( Mandiri) 
 
 materi : https://docs.google.com/presentation/d/1jMtbf2mkR-vpJ8WJHBNSJ17ygiNXtyZR25_BxD5D8zQ/edit?usp=sharing
