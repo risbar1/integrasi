@@ -44,7 +44,10 @@ username : admin password : admin
 
 ![gambar](https://github.com/risbar1/integrasi/assets/83967960/b9cf683d-984b-4244-be5f-b977a152badd)
 
-# Aplikasi UNISYS REVOLUSI
+# Aplikasi UNISYS REVOLUSI Sistem Akademik + Sistem kepegawaian + Sistem Keuangan + Terkoneksi Feeder
+
+![gambar](https://github.com/risbar1/integrasi/assets/83967960/46fcadf2-7070-4c70-a91c-f17dfe76529b)
+
 
 
 
