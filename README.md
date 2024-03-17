@@ -2,8 +2,7 @@
 
 # Aplikasi Anggaran
 
-Nama Lengkap : Risky Akbar 
-Nomor Whatsapp : 0877 8443 0939 
+Email : yaniragil65@gmail.com
 Nomor Rekening : 129 001 0925440 ( Mandiri) 
 
 materi : https://docs.google.com/presentation/d/1jMtbf2mkR-vpJ8WJHBNSJ17ygiNXtyZR25_BxD5D8zQ/edit?usp=sharing
@@ -11,6 +10,8 @@ materi : https://docs.google.com/presentation/d/1jMtbf2mkR-vpJ8WJHBNSJ17ygiNXtyZ
 website monitoring anggaran: http://localhost:8101/#/
 website manajemen user : http://localhost:8102/#/
 website sertifikat : http://localhost:8103/#/
+
+username : admin password : admin
 
 ![gambar](https://github.com/risbar1/integrasi/assets/83967960/1379a9d2-c8d9-44be-8587-eaf98fffe8b2)
 
@@ -43,8 +44,10 @@ website sertifikat : http://localhost:8103/#/
 
 ![gambar](https://github.com/risbar1/integrasi/assets/83967960/b9cf683d-984b-4244-be5f-b977a152badd)
 
-# Aplikasi Feeder PT
-![gambar](https://github.com/risbar1/integrasi/assets/83967960/16719527-d608-45b1-ad21-b32f3b58ef02)
+# Aplikasi UNISYS REVOLUSI Sistem Akademik + Sistem kepegawaian + Sistem Keuangan + Terkoneksi Feeder
+
+![gambar](https://github.com/risbar1/integrasi/assets/83967960/46fcadf2-7070-4c70-a91c-f17dfe76529b)
+
 
 
 
